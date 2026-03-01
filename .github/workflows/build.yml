@@ -1,6 +1,8 @@
 name: 'Build signed addon on release or beta'
 
 on:
+  push:
+
   release:
     types: [published]
   workflow_dispatch:
@@ -54,20 +56,29 @@ jobs:
 #   - name: Build extension
 #     run: make build
 
-    - name: Build extension
+    - name: Install yarn tools
       run: |
         yarn install
+
+    - name: Get submodule katex
+      run: |
         git submodule update --init
+
+    - name: Install yarn tools for katex
+      run: |
         cd srclib/katex
         yarn install
+
+
+    - name: Build extension
+      run: |
+        cd srclib/katex
 
         export USE_TTF=false
         export USE_WOFF=false
         export USE_WOFF2=false
         yarn build
         cd ../..
-
-
 
 
     - name: Make unsigned release available
