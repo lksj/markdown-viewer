@@ -6,7 +6,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: current
 
@@ -15,7 +15,7 @@ jobs:
           npm i -g eslint-plugin-no-unsanitized@latest eslint@latest
           echo "`npm config get prefix`/bin" >> $GITHUB_PATH
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Run linter
         run: make -k FORMAT=stylish
