@@ -51,8 +51,24 @@ jobs:
 #       cp manifest.json original-manifest.json
 #       jq --arg ver "$version" '.version=$ver' original-manifest.json > manifest.json
 
+#   - name: Build extension
+#     run: make build
+
     - name: Build extension
-      run: make build
+      run: |
+        yarn install
+        git submodule update --init
+        cd srclib/katex
+        yarn install
+
+        export USE_TTF=false
+        export USE_WOFF=false
+        export USE_WOFF2=false
+        yarn build
+        cd ../..
+
+
+
 
     - name: Make unsigned release available
       uses: actions/upload-artifact@v4
