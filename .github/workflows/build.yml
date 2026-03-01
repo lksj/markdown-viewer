@@ -22,7 +22,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        npm i -g web-ext yarn@4.1.1
+        npm i -g web-ext yarn
         echo "`npm config get prefix`/bin" >> $GITHUB_PATH
 
     - uses: actions/checkout@v4
@@ -74,6 +74,8 @@ jobs:
         #rm -rf yarn.lock
         #touch yarn.lock
         #echo 'checksumBehavior: "update"' >>.yarnrc.yml
+        corepack enable
+        yarn set version 4.1.1
         yarn install
         find -name '/tmp/xfs-*/build.log' -print -exec cat '{}' \;
 
