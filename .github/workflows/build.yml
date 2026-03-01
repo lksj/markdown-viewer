@@ -68,6 +68,7 @@ jobs:
       run: |
         cd srclib/katex
         yarn install
+        find -name '/tmp/xfs-*/build.log' -print -exec cat '{}' \;
 
 
     - name: Build extension
