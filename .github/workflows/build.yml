@@ -71,7 +71,6 @@ jobs:
     - name: Install yarn tools for katex
       run: |
         cd KaTeX
-        npm install
 
         yarn install
         find -name '/tmp/xfs-*/build.log' -print -exec cat '{}' \;
