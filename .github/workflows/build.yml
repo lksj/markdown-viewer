@@ -65,14 +65,14 @@ jobs:
 
     - name: Get katex
       run: |
-        git clone --branch v0.16.33 https://github.com/KaTeX/KaTeX.git
+        git clone --branch v0.16.7 https://github.com/KaTeX/KaTeX.git
 
 
     - name: Install yarn tools for katex
       run: |
         cd KaTeX
-        corepack enable
-        yarn set version 4.1.1
+        npm install
+
         yarn install
         find -name '/tmp/xfs-*/build.log' -print -exec cat '{}' \;
 
