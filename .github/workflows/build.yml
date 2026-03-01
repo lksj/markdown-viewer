@@ -72,7 +72,7 @@ jobs:
         yarn -v
         rm -rf yarn.lock
         touch yarn.lock
-        yarn install --verbose
+        yarn install
         find -name '/tmp/xfs-*/build.log' -print -exec cat '{}' \;
 
 
