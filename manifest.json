@@ -11,7 +11,7 @@
 		"gecko": {
 			"id": "{589210a6-4e75-419e-a324-0081e844ffcf}",
                     "data_collection_permissions": {
-                        "required": []
+                        "required": ["none"]
 
                     }
 
