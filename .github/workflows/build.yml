@@ -65,7 +65,8 @@ jobs:
 
     - name: Get katex
       run: |
-        git clone --branch v0.16.7 https://github.com/KaTeX/KaTeX.git
+        #git clone --branch v0.16.7 https://github.com/KaTeX/KaTeX.git
+        git submodule update --init
 
 
     - name: Install yarn tools for katex
