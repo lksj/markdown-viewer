@@ -71,12 +71,6 @@ jobs:
     - name: Install yarn tools for katex
       run: |
         cd KaTeX
-        node --version
-        npm --version
-        yarn -v
-        #rm -rf yarn.lock
-        #touch yarn.lock
-        #echo 'checksumBehavior: "update"' >>.yarnrc.yml
         corepack enable
         yarn set version 4.1.1
         yarn install
