@@ -70,7 +70,9 @@ jobs:
         node --version
         npm --version
         yarn -v
-        yarn install
+        rm -rf yarn.lock
+        touch yarn.lock
+        yarn install --verbose
         find -name '/tmp/xfs-*/build.log' -print -exec cat '{}' \;
 
 
