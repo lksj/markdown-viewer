@@ -60,13 +60,14 @@ jobs:
       run: |
         yarn install
 
-    - name: Get submodule katex
+    - name: Get katex
       run: |
-        git submodule update --init
+        git clone --branch v0.16.33 https://github.com/KaTeX/KaTeX.git
+
 
     - name: Install yarn tools for katex
       run: |
-        cd srclib/katex
+        cd KateX
         node --version
         npm --version
         yarn -v
@@ -79,7 +80,7 @@ jobs:
 
     - name: Build extension
       run: |
-        cd srclib/katex
+        cd KaTeX
 
         export USE_TTF=false
         export USE_WOFF=false
