@@ -87,6 +87,9 @@ jobs:
         yarn build
         cd ../..
 
+    - name: Build extension
+      run: make build
+
 
     - name: Make unsigned release available
       uses: actions/upload-artifact@v4
