@@ -10,13 +10,10 @@
 	"browser_specific_settings": {
 		"gecko": {
 			"id": "{589210a6-4e75-419e-a324-0081e844ffcf}",
-                    "data_collection_permissions": [
-                    { 
-                        "citation": "This extension does not collect any personal data.",
-                        "required": false
+                    "data_collection_permissions": {
+                        "required": []
 
                     }
-                    ]
 
 
   
