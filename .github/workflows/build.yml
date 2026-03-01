@@ -67,7 +67,7 @@ jobs:
 
     - name: Install yarn tools for katex
       run: |
-        cd KateX
+        cd KaTeX
         node --version
         npm --version
         yarn -v
