@@ -79,7 +79,7 @@ jobs:
 
     - name: Build extension
       run: |
-        cd KaTeX
+        cd srclib/katex
 
         export USE_TTF=false
         export USE_WOFF=false
